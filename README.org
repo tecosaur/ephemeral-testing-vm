@@ -1,0 +1,3 @@
+* [[https://github.com/tecosaur/ephemeral-testing-vm/actions/workflows/vm.yaml][Do the thing]]
+
+Just for my own use.

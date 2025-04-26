@@ -1,0 +1,27 @@
+name: Tmate runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        description: 'Select runner OS'
+        required: true
+        type: choice
+        options:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+
+jobs:
+  tmate:
+    runs-on: ${{ github.event.inputs.os }}
+    steps:
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1'
+
+      - name: Start tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          timeout-minutes: 15
+          limit-access-to-actor: true
