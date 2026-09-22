@@ -11,6 +11,11 @@ on:
           - ubuntu-latest
           - macos-latest
           - windows-latest
+      limit_to_actor:
+        description: 'Limit SSH access to my GitHub SSH keys'
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   tmate:
@@ -24,4 +29,4 @@ jobs:
         uses: owenthereal/action-upterm@v1
         with:
           wait-timeout-minutes: 15
-          limit-access-to-actor: true
+          limit-access-to-actor: ${{ inputs.limit_to_actor }}
