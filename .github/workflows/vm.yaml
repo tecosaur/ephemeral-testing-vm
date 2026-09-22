@@ -1,4 +1,4 @@
-name: Tmate runner
+name: Upterm runner
 
 on:
   workflow_dispatch:
@@ -20,8 +20,8 @@ jobs:
         with:
           version: '1'
 
-      - name: Start tmate session
-        uses: mxschmitt/action-tmate@v3
+      - name: Start upterm session
+        uses: owenthereal/action-upterm@v1
         with:
-          timeout-minutes: 15
+          wait-timeout-minutes: 15
           limit-access-to-actor: true
