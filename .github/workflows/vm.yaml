@@ -18,7 +18,7 @@ on:
         default: true
 
 jobs:
-  tmate:
+  vm:
     runs-on: ${{ github.event.inputs.os }}
     steps:
       - uses: julia-actions/setup-julia@v1
