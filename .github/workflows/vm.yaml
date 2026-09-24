@@ -25,6 +25,10 @@ jobs:
 
       - name: Start upterm session
         uses: owenthereal/action-upterm@v1
+        env:
+          # Lets upterm fetch the actor's public keys without shelling out to
+          # `gh auth token`, which exceeds its 5s deadline on Windows runners.
+          GH_TOKEN: ${{ github.token }}
         with:
           wait-timeout-minutes: 15
           limit-access-to-actor: ${{ inputs.limit_to_actor }}
