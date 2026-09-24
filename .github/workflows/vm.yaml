@@ -26,8 +26,5 @@ jobs:
       - name: Start upterm session
         uses: owenthereal/action-upterm@v1
         with:
-          # v0.30 moved session sockets; action-upterm v1.15 only detects the
-          # v0.29 layout (see owenthereal/action-upterm#36). Unpin once merged.
-          upterm-version: v0.29.0
           wait-timeout-minutes: 15
           limit-access-to-actor: ${{ inputs.limit_to_actor }}
